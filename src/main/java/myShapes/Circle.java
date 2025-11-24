@@ -2,7 +2,7 @@ package myShapes;
 
 import java.awt.*;
 
-public class Circle implements myShape {
+public class Circle extends myShape {
     private int rad;
     private Point loc;
     private Color col;
@@ -13,8 +13,7 @@ public class Circle implements myShape {
         this.rad  = rad;
     }
 
-    @Override
-    public void draw(Graphics inputGraphic) {
+    protected void draw(Graphics inputGraphic) {
         inputGraphic.setColor(col);
         inputGraphic.fillOval(loc.x, loc.y, rad, rad);
     }

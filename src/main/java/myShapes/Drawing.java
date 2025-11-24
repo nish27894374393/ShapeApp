@@ -1,19 +1,24 @@
-import myShapes.*;
+package myShapes;
 
 import java.awt.*;
-import java.util.ArrayList;
 
 public class Drawing extends Canvas {
-    private ArrayList<myShape> shapeList= new ArrayList<>();
-    public Drawing(Circle myCircle, Rect myRectangle) {
-        shapeList.add(myCircle);
-        shapeList.add(myRectangle);
+    private ShapeDB myShapesDB; 
+    public Drawing() {
+        this.myShapesDB = new  ShapeDB();
+        this.setBackground(Color.white);
     }
-
+    
+    public void addCircle(Point pos, Color col, int radius){
+        myShapesDB.addCircle(pos,col,radius);
+    };
+    public void addSquare (Point pos, Color col, int side){
+        myShapesDB.addSquare(pos,col,side);
+    }
+    public void addRect(Point pos, Color col, int w, int h){
+        myShapesDB.addRect(pos,col,w,h);
+    }
     public void paint(Graphics g) {
-        for  (myShape s : shapeList) {
-            s.draw(g);
-        }
-
+        myShapesDB.drawShapes(g);
     }
 }

@@ -2,7 +2,7 @@ package myShapes;
 
 import java.awt.*;
 
-public class Rect implements myShape {
+public class Rect extends myShape {
         private int width;
         private int height;
         private Point loc;
@@ -15,7 +15,7 @@ public class Rect implements myShape {
             this.height = height;
         }
 
-        public void draw(Graphics inputGraphic){
+        protected void draw(Graphics inputGraphic){
             inputGraphic.setColor(col);
             inputGraphic.fillRect(loc.x, loc.y, width, height);
 
